@@ -18,6 +18,7 @@ package com.jeroenmols.fragmentbacknavigation
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -67,8 +68,15 @@ class MainActivity : AppCompatActivity() {
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
             val view = inflater.inflate(R.layout.fragment_password, container, false)
             val passwordButton = view.findViewById<Button>(R.id.button_password)
-            passwordButton.setOnClickListener({ Toast.makeText(activity, "logging in...", Toast.LENGTH_SHORT) })
+            passwordButton.setOnClickListener({
+                simulateLogin()
+            })
             return view;
+        }
+
+        private fun simulateLogin() {
+            Toast.makeText(activity, "logged in success, navigating back", Toast.LENGTH_SHORT).show()
+            Handler().postDelayed({ activity.onBackPressed() }, 1000)
         }
 
     }
