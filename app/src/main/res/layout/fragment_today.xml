@@ -24,7 +24,7 @@
     tools:context="com.jeroenmols.fragmentbacknavigation.MainActivity">
 
     <Button
-        android:id="@+id/button_login"
+        android:id="@+id/button_today_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -36,27 +36,38 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textview_login"
+        android:id="@+id/textview_today_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="Welcome to our app!"
-        app:layout_constraintBottom_toTopOf="@+id/button_login"
+        android:text="Please login to see your events for today."
+        app:layout_constraintBottom_toTopOf="@+id/button_today_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageview_login"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/imageview_today_notloggedin"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
         android:layout_marginBottom="16dp"
-        android:padding="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/textview_login"
+        app:layout_constraintBottom_toTopOf="@+id/textview_today_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_important_devices_black_24dp" />
+        app:srcCompat="@drawable/ic_today_black_24dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Unable to load events"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageview_today_notloggedin" />
 
 </android.support.constraint.ConstraintLayout>

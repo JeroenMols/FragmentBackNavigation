@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction().replace(R.id.framelayout_fragmentcontainer, LoginFragment()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.framelayout_fragmentcontainer, TodayFragment()).commit()
     }
 
     fun showUserNameFragment() {
@@ -43,11 +43,11 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.framelayout_fragmentcontainer, PasswordFragment()).commit()
     }
 
-    class LoginFragment : Fragment() {
+    class TodayFragment : Fragment() {
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-            val view = inflater.inflate(R.layout.fragment_login, container, false)
-            val loginButton = view.findViewById<Button>(R.id.button_login)
+            val view = inflater.inflate(R.layout.fragment_today, container, false)
+            val loginButton = view.findViewById<Button>(R.id.button_today_login)
             loginButton.setOnClickListener({ (activity as MainActivity).showUserNameFragment()});
             return view;
         }
