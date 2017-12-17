@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
             val view = inflater.inflate(R.layout.fragment_today, container, false)
             val loginButton = view.findViewById<Button>(R.id.button_today_login)
             loginButton.setOnClickListener({ (activity as MainActivity).showUserNameFragment()});
+            activity.title = "Today's events"
             return view;
         }
     }
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity() {
             val view = inflater.inflate(R.layout.fragment_username, container, false)
             val usernameButton = view.findViewById<Button>(R.id.button_username)
             usernameButton.setOnClickListener({ (activity as MainActivity).showPasswordFragment()});
+            activity.title = "Enter username"
             return view;
         }
     }
@@ -71,6 +73,7 @@ class MainActivity : AppCompatActivity() {
             passwordButton.setOnClickListener({
                 simulateLogin()
             })
+            activity.title = "Enter password"
             return view;
         }
 
